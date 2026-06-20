@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eden Aisha Mirador – Senior QA & Remote Customer Support Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF6F1; --peach-lt: #F5E6D8; --peach: #E8C8A8;
+    --terra: #C8724A; --terra-dk: #9E5235; --sand: #D4B896;
+    --ink: #3A2E28; --muted: #7A6A60; --divider: #E2D4C4; --white: #FFFFFF;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 16px; line-height: 1.7; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--cream); border-bottom: 1px solid var(--divider);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
+  }
+  .nav-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--terra-dk); text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--terra); }
+
+  section { padding: 5rem 2rem; max-width: 860px; margin: 0 auto; }
+
+  #hero {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    align-items: center; padding-top: 5rem; padding-bottom: 5rem;
+    max-width: 900px; margin: 0 auto;
+  }
+  .hero-eyebrow { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 1rem; }
+  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.15; color: var(--ink); margin-bottom: 1rem; }
+  .hero-name em { font-style: italic; color: var(--terra); }
+  .hero-tagline { font-size: 1.05rem; color: var(--muted); margin-bottom: 2rem; max-width: 340px; }
+  .hero-cta { display: inline-flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { padding: 0.6rem 1.4rem; border-radius: 40px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--terra); color: #fff; }
+  .btn-primary:hover { background: var(--terra-dk); }
+  .btn-outline { background: transparent; color: var(--terra); border: 1.5px solid var(--terra); }
+  .btn-outline:hover { background: var(--peach-lt); }
+
+  .hero-card { background: var(--white); border: 1px solid var(--divider); border-radius: 20px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .stat { background: var(--peach-lt); border-radius: 14px; padding: 1rem 1.25rem; }
+  .stat-number { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--terra-dk); line-height: 1; }
+  .stat-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .award-tag { background: var(--peach-lt); border-radius: 10px; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--terra-dk); display: flex; align-items: center; gap: 8px; }
+  .award-tag .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--terra); flex-shrink: 0; }
+
+  .section-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.5rem; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--ink); margin-bottom: 2.5rem; }
+
+  /* METRICS STRIP */
+  .metrics-strip { background: var(--terra); padding: 2.5rem 2rem; }
+  .metrics-strip .inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.5rem; }
+  .metric-item { text-align: center; }
+  .metric-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #fff; line-height: 1; }
+  .metric-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); margin-top: 6px; font-weight: 500; }
+
+  /* SKILLS */
+  #skills { background: var(--white); max-width: 100%; padding: 4rem 0; }
+  #skills .inner { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .skill-group { background: var(--cream); border: 1px solid var(--divider); border-radius: 16px; padding: 1.25rem 1.5rem; }
+  .skill-group-title { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terra); margin-bottom: 0.75rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag { background: var(--white); border: 1px solid var(--divider); border-radius: 20px; padding: 3px 12px; font-size: 0.8rem; color: var(--muted); }
+
+  /* NICHE */
+  .niche-card { background: var(--terra); border-radius: 18px; padding: 1.5rem 2rem; margin-top: 2rem; display: flex; align-items: flex-start; gap: 1.25rem; }
+  .niche-icon { font-size: 1.8rem; flex-shrink: 0; }
+  .niche-card h4 { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+  .niche-card p { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+
+  /* TOOLS */
+  .tools-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tool-pill { background: var(--white); border: 1px solid var(--divider); border-radius: 30px; padding: 6px 16px; font-size: 0.88rem; color: var(--ink); font-weight: 500; display: flex; align-items: center; gap: 6px; }
+  .tool-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--peach); }
+
+  /* EXPERIENCE */
+  .timeline { display: flex; flex-direction: column; gap: 2rem; }
+  .exp-card { background: var(--white); border: 1px solid var(--divider); border-radius: 18px; padding: 1.75rem 2rem; position: relative; padding-left: 2.25rem; }
+  .exp-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--peach); border-radius: 4px 0 0 4px; }
+  .exp-card:first-child::before { background: var(--terra); }
+  .exp-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
+  .exp-role { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--ink); }
+  .exp-period { font-size: 0.8rem; font-weight: 500; color: var(--terra); background: var(--peach-lt); padding: 3px 10px; border-radius: 20px; }
+  .exp-company { font-size: 0.88rem; color: var(--muted); margin-bottom: 1rem; font-weight: 500; }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .exp-bullets li { font-size: 0.92rem; color: var(--ink); padding-left: 1.2rem; position: relative; }
+  .exp-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--terra); font-size: 1.2rem; line-height: 1.4; }
+  .exp-bullets li strong { color: var(--terra-dk); }
+  .exp-bullets li.highlight { background: var(--peach-lt); border-radius: 8px; padding: 6px 10px 6px 1.5rem; }
+  .exp-bullets li.highlight::before { left: 6px; }
+
+  /* REMOTE */
+  #remote { background: var(--peach-lt); max-width: 100%; padding: 4rem 0; }
+  #remote .inner { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+  .remote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+  .remote-card { background: var(--white); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--divider); }
+  .remote-icon { font-size: 1.4rem; margin-bottom: 0.75rem; width: 42px; height: 42px; background: var(--peach-lt); display: flex; align-items: center; justify-content: center; border-radius: 10px; }
+  .remote-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+  .remote-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+  /* CONTACT */
+  #contact { text-align: center; }
+  .contact-card { background: var(--white); border: 1px solid var(--divider); border-radius: 24px; padding: 3rem 2.5rem; max-width: 500px; margin: 0 auto; }
+  .contact-card p { color: var(--muted); margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--ink); text-decoration: none; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid var(--divider); transition: background 0.2s; }
+  .contact-link:hover { background: var(--peach-lt); }
+  .contact-link .lbl { color: var(--muted); font-size: 0.8rem; min-width: 60px; }
+
+  footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--divider); }
+
+  @media (max-width: 640px) {
+    #hero { grid-template-columns: 1fr; }
+    nav .nav-links { display: none; }
+    .exp-top { flex-direction: column; }
+    .metrics-strip .inner { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-name">Eden Mirador</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#remote">Remote-Ready</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="padding: 0 2rem; max-width: 960px; margin: 0 auto;">
+  <div id="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Senior QA &amp; Remote Customer Support Specialist</p>
+      <h1 class="hero-name">Hi, I'm <em>Eden</em><br>Aisha Mirador.</h1>
+      <p class="hero-tagline">9+ years building quality systems and delivering exceptional non-voice service — from financial services BPO to global remote teams.</p>
+      <div class="hero-cta">
+        <a href="mailto:eden.mgulferica@outlook.com" class="btn btn-primary">Get in touch</a>
+        <a href="https://linkedin.com/in/edenmirador" class="btn btn-outline" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-number">9+</div>
+          <div class="stat-label">Years in BPO &amp; Finance</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">90%+</div>
+          <div class="stat-label">CSAT Score maintained</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-number">30%</div>
+          <div class="stat-label">Reporting time reduced</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">C2</div>
+          <div class="stat-label">English Proficiency</div>
+        </div>
+      </div>
+      <div class="award-tag">
+        <span class="dot"></span>
+        Client Experience Gala Award 2024 · GEM Awardee 2023–24
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS STRIP -->
+<div class="metrics-strip">
+  <div class="inner">
+    <div class="metric-item">
+      <div class="metric-num">80+</div>
+      <div class="metric-lbl">Complex tickets handled weekly</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">30+</div>
+      <div class="metric-lbl">Quality audits per month</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">3×</div>
+      <div class="metric-lbl">Rewards &amp; Recognition (2022–24)</div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-num">0</div>
+      <div class="metric-lbl">Compliance violations in 5 years</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills">
+  <div class="inner">
+    <p class="section-eyebrow">Core Competencies</p>
+    <h2 class="section-title">What I bring to your team</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <div class="skill-group-title">Non-Voice Support</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Email Management</span>
+          <span class="skill-tag">Live Chat Support</span>
+          <span class="skill-tag">Ticket Handling</span>
+          <span class="skill-tag">Helpdesk Operations</span>
+          <span class="skill-tag">CRM Updates</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Quality &amp; Compliance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">QA Scorecards</span>
+          <span class="skill-tag">Calibration Sessions</span>
+          <span class="skill-tag">Root Cause Analysis</span>
+          <span class="skill-tag">Compliance Review</span>
+          <span class="skill-tag">SOP Development</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Reporting &amp; Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">KPI Tracking</span>
+          <span class="skill-tag">Automated Dashboards</span>
+          <span class="skill-tag">SLA &amp; TAT Monitoring</span>
+          <span class="skill-tag">CSAT Reporting</span>
+          <span class="skill-tag">Stakeholder Reports</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Remote Collaboration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Async Communication</span>
+          <span class="skill-tag">Zoom / MS Teams</span>
+          <span class="skill-tag">Cross-team Coordination</span>
+          <span class="skill-tag">Distributed Workflows</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-card">
+      <div class="niche-icon">🍁</div>
+      <div>
+        <h4>Canadian Retirement Plan Specialist</h4>
+        <p>5+ years handling RRSP, DPSP, and DCPP inquiries for Sun Life Canada clients — including transfers, withdrawals, plan maintenance, and retirement income fund plans with zero compliance violations. A rare niche skill very few remote specialists hold.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <p class="section-eyebrow" style="margin-bottom: 1rem;">Tools &amp; Platforms</p>
+      <div class="tools-grid">
+        <span class="tool-pill"><span class="tool-dot"></span>Zendesk</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Intercom</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Salesforce</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Gorgias</span>
+        <span class="tool-pill"><span class="tool-dot"></span>HelpScout</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Qualtrics</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Slack</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Google Workspace</span>
+        <span class="tool-pill"><span class="tool-dot"></span>MS Teams / Zoom</span>
+        <span class="tool-pill"><span class="tool-dot"></span>SQL</span>
+        <span class="tool-pill"><span class="tool-dot"></span>UAT / Beta Testing</span>
+        <span class="tool-pill"><span class="tool-dot"></span>Knowledge Base Management</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-eyebrow">Work History</p>
+  <h2 class="section-title">Professional experience</h2>
+  <div class="timeline">
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div class="exp-role">Sr. Analyst II – Quality</div>
+        <span class="exp-period">April 2025 – Present</span>
+      </div>
+      <div class="exp-company">Sun Life Global Solutions / Sun Life Canada of Philippines Inc. · Remote</div>
+      <ul class="exp-bullets">
+        <li>Designed and launched automated KPI dashboards that <strong>cut manual reporting time by ~30%</strong>, freeing hours weekly for the team.</li>
+        <li>Overhauled the QA scorecard framework — standardizing evaluation criteria and reducing scoring inconsistency across calibration sessions.</li>
+        <li>Identified recurring ticket patterns that led to <strong>multiple process improvements</strong> implemented across the service center.</li>
+        <li>Facilitated weekly remote calibration sessions — aligning agent performance to quality targets and reducing escalation rates.</li>
+        <li>Developed SOPs and knowledge base articles that improved first-contact resolution consistency across distributed teams.</li>
+        <li>Coordinated quality reporting across geographically distributed teams via Zoom, MS Teams, and Slack in a fully async environment.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div class="exp-role">Sr. Client Care Representative II – Non-Voice Technical Support &amp; QA</div>
+        <span class="exp-period">March 2020 – April 2025</span>
+      </div>
+      <div class="exp-company">Sun Life Global Solutions / Sun Life Canada of Philippines Inc. · Remote</div>
+      <ul class="exp-bullets">
+        <li>Owned a high-volume non-voice support queue handling <strong>80+ complex transactions weekly</strong> — maintaining <strong>90%+ CSAT</strong> throughout.</li>
+        <li class="highlight">Specialized in Canadian retirement plan inquiries — RRSP, DPSP, and DCPP — with <strong>zero compliance violations over 5 years</strong>.</li>
+        <li>Deputized as team POC during managerial absences — independently overseeing daily deliverables and ensuring 100% SLA adherence.</li>
+        <li>Coached and onboarded new hires via virtual sessions — contributing to measurable improvements in team CSAT scores.</li>
+        <li>Executed <strong>30+ random email and call audits monthly</strong> — identifying compliance risks and driving corrective actions.</li>
+        <li>Selected as pioneer batch for Beta/UAT Testing of Sun Life's new client portal and mobile app — documenting bugs and collaborating with IT QA partners pre-launch.</li>
+        <li>Rewards &amp; Recognition Awardee (2022–2024) · GEM Awardee (2023–2024) · Client Experience Gala Award (2024).</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <div class="exp-role">Afterhours Claims Lodgement Officer – Non-Voice Operations</div>
+        <span class="exp-period">June 2017 – February 2020</span>
+      </div>
+      <div class="exp-company">QBE GSSC – Philippines · Remote-Compatible</div>
+      <ul class="exp-bullets">
+        <li>Processed and investigated insurance claims end-to-end — maintaining <strong>100% compliance with regulatory standards</strong> over 2.5 years.</li>
+        <li>Managed high-volume inquiry queues independently during after-hours operations — consistently achieving all TAT targets with minimal supervision.</li>
+        <li>Flagged and escalated high-risk claims that led to process reviews and team-wide improvements in documentation standards.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- REMOTE READY -->
+<div id="remote">
+  <div class="inner">
+    <p class="section-eyebrow">Why Remote Works for Me</p>
+    <h2 class="section-title">Remote-ready, day one</h2>
+    <div class="remote-grid">
+      <div class="remote-card">
+        <div class="remote-icon">🏆</div>
+        <h4>Award-winning track record</h4>
+        <p>3-time Rewards & Recognition Awardee, GEM Awardee, and Client Experience Gala Award 2024 — recognized for consistently exceeding standards remotely.</p>
+      </div>
+      <div class="remote-card">
+        <div class="remote-icon">🌐</div>
+        <h4>Async-native</h4>
+        <p>Experienced in async reporting, virtual calibration, and cross-team coordination via Zoom, MS Teams, and cloud tools across distributed teams.</p>
+      </div>
+      <div class="remote-card">
+        <div class="remote-icon">🎯</div>
+        <h4>Zero-supervision delivery</h4>
+        <p>Consistent record of meeting SLAs, KPIs, and compliance standards independently — including after-hours and solo POC coverage roles.</p>
+      </div>
+      <div class="remote-card">
+        <div class="remote-icon">💬</div>
+        <h4>C2 English proficiency</h4>
+        <p>Advanced/Mastery level written English — non-voice communication is where I'm strongest. Your clients will never know I'm not local.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-eyebrow">Education</p>
+  <h2 class="section-title">Academic background</h2>
+  <div style="background: var(--white); border: 1px solid var(--divider); border-radius: 18px; padding: 1.75rem 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+    <div style="width: 48px; height: 48px; background: var(--peach-lt); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0;">🎓</div>
+    <div>
+      <div style="font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--ink); margin-bottom: 4px;">Bachelor of Science in Nursing</div>
+      <div style="font-size: 0.88rem; color: var(--muted);">Calayan Educational Foundation Inc., Lucena City · 2007 – 2011</div>
+      <p style="margin-top: 0.6rem; font-size: 0.88rem; color: var(--muted);">BSN background strengthens medical terminology familiarity and compliance-first mindset — directly transferable to quality assurance and process-driven remote work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-eyebrow" style="text-align:center;">Let's Connect</p>
+  <h2 class="section-title" style="text-align:center;">Available for remote &amp; freelance opportunities</h2>
+  <div class="contact-card">
+    <p>Based in Makati City, Philippines · Available 6 PM–1 AM Manila time daily · Aligned with AU morning shifts and US day/evening hours.</p>
+    <div class="contact-links">
+      <a href="mailto:eden.mgulferica@outlook.com" class="contact-link">
+        <span class="lbl">Email</span>
+        <span>eden.mgulferica@outlook.com</span>
+      </a>
+      <a href="tel:+639298258854" class="contact-link">
+        <span class="lbl">Phone</span>
+        <span>+63 929 825 8854</span>
+      </a>
+      <a href="https://linkedin.com/in/edenmirador" target="_blank" class="contact-link">
+        <span class="lbl">LinkedIn</span>
+        <span>linkedin.com/in/edenmirador</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Eden Aisha Mirador · Makati City, Philippines · Senior QA &amp; Remote Customer Support Specialist
+</footer>
+
+</body>
+</html>
